@@ -76,6 +76,7 @@ Chrome浏览器插件，用于阻止指定域名网页中的媒体自动播放�
 - 本插件不收集、不上传任何用户浏览数据
 - 所有数据存储在本地浏览器中
 - 代码开源，可供审计
+- 完整隐私政策：[中文](docs/privacy-policy-zh.md) / [English](docs/privacy-policy-en.md)
 
 ## 开发说明
 
