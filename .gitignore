@@ -14,3 +14,7 @@ node_modules/
 # Temporary test output
 coverage/
 tmp/
+
+# Generated icon review artifacts
+icons/*candidate*.png
+icons/*preview*.png
