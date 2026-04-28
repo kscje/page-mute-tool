@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="optionsTitle">Page Mute Tool - Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <header class="options-header">
+      <h1 data-i18n="optionsTitle">Page Mute Tool - 设置</h1>
+    </header>
+
+    <nav class="options-nav">
+      <button class="nav-tab active" data-tab="general" data-i18n="generalSettings">常规设置</button>
+      <button class="nav-tab" data-tab="domains" data-i18n="domainManagement">域名管理</button>
+      <button class="nav-tab" data-tab="about" data-i18n="about">关于</button>
+    </nav>
+
+    <main class="options-content">
+      <div id="general-tab" class="tab-content active">
+        <h2 data-i18n="generalSettings">常规设置</h2>
+        <div class="setting-group">
+          <div class="setting-item">
+            <label for="block-audio" data-i18n="blockAudio">阻止音频自动播放</label>
+            <input type="checkbox" id="block-audio" checked>
+          </div>
+          <div class="setting-item">
+            <label for="block-video" data-i18n="blockVideo">阻止视频自动播放</label>
+            <input type="checkbox" id="block-video" checked>
+          </div>
+          <div class="setting-item">
+            <label for="block-iframe" data-i18n="blockIframe">阻止 iframe 中的媒体自动播放</label>
+            <input type="checkbox" id="block-iframe" checked>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button id="save-settings" data-i18n="saveSettings">保存设置</button>
+          <button id="restore-defaults" data-i18n="restoreDefaults">恢复默认</button>
+        </div>
+      </div>
+
+      <div id="domains-tab" class="tab-content">
+        <h2 data-i18n="domainManagement">域名管理</h2>
+        <div class="domain-management">
+          <div class="add-domain-form">
+            <input type="text" id="domain-input" data-i18n-placeholder="domainPlaceholder" placeholder="输入域名 (如: example.com 或 *.example.com)">
+            <input type="text" id="domain-description" data-i18n-placeholder="domainDescription" placeholder="可选描述">
+            <button id="add-domain-btn" data-i18n="addDomain">添加</button>
+          </div>
+
+          <div class="domain-list">
+            <h3 data-i18n="addedDomains">已添加域名</h3>
+            <div id="domain-items" class="domain-items">
+              <div class="loading" data-i18n="loading">加载中...</div>
+            </div>
+          </div>
+
+          <div class="domain-actions">
+            <button id="import-domains" data-i18n="importDomains">导入域名</button>
+            <button id="export-domains" data-i18n="exportDomains">导出域名</button>
+            <button id="clear-domains" data-i18n="clearDomains">清空域名</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="about-tab" class="tab-content">
+        <h2 data-i18n="about">关于</h2>
+        <div class="about-content">
+          <div class="about-item">
+            <strong data-i18n="version">版本：</strong> 1.0.0
+          </div>
+          <div class="about-item">
+            <strong data-i18n="author">作者：</strong> Page Mute Team
+          </div>
+          <div class="about-item">
+            <strong data-i18n="descriptionLabel">描述：</strong> <span data-i18n="extensionDescription">阻止指定域名网页中的媒体自动播放，强制用户手动点击播放</span>
+          </div>
+          <div class="about-item">
+            <strong data-i18n="license">许可证：</strong> MIT
+          </div>
+          <div class="about-item">
+            <strong data-i18n="support">支持：</strong> Chrome 88+
+          </div>
+          <div class="about-item">
+            <strong data-i18n="changelog">更新日志：</strong>
+            <ul>
+              <li>v1.0.0 - <span data-i18n="initialVersion">初始版本</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="utils.js"></script>
+  <script src="storage.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

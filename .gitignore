@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+
+# Local editor and system files
+.idea/
+.vscode/
+
+# Dependency folders are not used by this plain extension, but keep them out if created later.
+node_modules/
+
+# Temporary test output
+coverage/
+tmp/

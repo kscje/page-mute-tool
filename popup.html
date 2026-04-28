@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="popupTitle">Page Mute Tool</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1 data-i18n="popupTitle">Page Mute Tool</h1>
+      <button id="settings-btn" class="icon-btn">⚙️</button>
+    </header>
+
+    <div class="quick-add-section">
+      <div class="quick-add-info">
+        <span class="quick-add-label" data-i18n="currentDomain">当前域名</span>
+        <span id="quick-add-domain" class="quick-add-domain" data-i18n="loading">加载中...</span>
+        <span id="quick-add-status" class="quick-add-status" data-i18n="checking">检查中...</span>
+      </div>
+      <button id="quick-add-btn" class="secondary-btn" data-i18n="quickAddButton">一键添加当前域名</button>
+    </div>
+
+    <div class="add-domain-section">
+      <input type="text" id="domain-input" data-i18n-placeholder="domainPlaceholder" placeholder="输入域名 (如: example.com 或 *.example.com)">
+      <button id="add-domain-btn" data-i18n="addDomain">添加</button>
+    </div>
+
+    <div class="domain-list-section">
+      <h2 data-i18n="domainListTitle">受管控域名列表</h2>
+      <div id="domain-list" class="domain-list">
+        <div class="loading" data-i18n="loading">加载中...</div>
+      </div>
+      <div class="pagination">
+        <button id="prev-page" class="pagination-btn">‹</button>
+        <span id="page-info">1 / 1</span>
+        <button id="next-page" class="pagination-btn">›</button>
+      </div>
+    </div>
+
+    <div class="global-control">
+      <div id="stats-info">
+        <span data-i18n="statsInfo">提示: 已阻止</span> <span id="blocked-count">0</span> <span data-i18n="statsUnit">个自动播放</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="utils.js"></script>
+  <script src="storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

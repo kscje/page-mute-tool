@@ -1,0 +1,262 @@
+{
+  "extensionName": {
+    "message": "Page Mute Tool",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Block media autoplay on specified domains, forcing manual play",
+    "description": "Extension description"
+  },
+  "popupTitle": {
+    "message": "Page Mute Tool",
+    "description": "Popup title"
+  },
+  "currentDomain": {
+    "message": "Current Domain",
+    "description": "Current domain label"
+  },
+  "quickAddButton": {
+    "message": "Add Current Domain",
+    "description": "Quick add button"
+  },
+  "checking": {
+    "message": "Checking...",
+    "description": "Checking status"
+  },
+  "loading": {
+    "message": "Loading...",
+    "description": "Loading hint"
+  },
+  "domainPlaceholder": {
+    "message": "Enter domain (e.g: example.com or *.example.com)",
+    "description": "Domain input placeholder"
+  },
+  "addDomain": {
+    "message": "Add",
+    "description": "Add button"
+  },
+  "domainListTitle": {
+    "message": "Managed Domains",
+    "description": "Domain list title"
+  },
+  "importBtn": {
+    "message": "Import",
+    "description": "Import button"
+  },
+  "exportBtn": {
+    "message": "Export",
+    "description": "Export button"
+  },
+  "clearAllBtn": {
+    "message": "Clear All",
+    "description": "Clear all button"
+  },
+  "globalToggle": {
+    "message": "Global:",
+    "description": "Global switch label"
+  },
+  "statsInfo": {
+    "message": "Blocked",
+    "description": "Stats info prefix"
+  },
+  "statsUnit": {
+    "message": "autoplay attempts",
+    "description": "Stats info unit"
+  },
+  "statusUnknown": {
+    "message": "Unknown",
+    "description": "Status: unknown"
+  },
+  "statusGlobalDisabled": {
+    "message": "Global Disabled",
+    "description": "Status: global disabled"
+  },
+  "statusEnabled": {
+    "message": "Enabled",
+    "description": "Status: enabled"
+  },
+  "statusNotEnabled": {
+    "message": "Not Enabled",
+    "description": "Status: not enabled"
+  },
+  "pageUnavailable": {
+    "message": "Page unavailable",
+    "description": "Page unavailable hint"
+  },
+  "domainUnavailable": {
+    "message": "Current page domain unavailable",
+    "description": "Domain unavailable hint"
+  },
+  "emptyDomains": {
+    "message": "No domains yet, please add",
+    "description": "Empty domain list hint"
+  },
+  "confirmRemoveDomain": {
+    "message": "Are you sure you want to delete this domain?",
+    "description": "Remove domain confirmation"
+  },
+  "confirmClearDomains": {
+    "message": "Are you sure you want to clear all domains?",
+    "description": "Clear domains confirmation"
+  },
+  "confirmRestoreDefaults": {
+    "message": "Are you sure you want to restore default settings?",
+    "description": "Restore defaults confirmation"
+  },
+  "errorNoDomain": {
+    "message": "Please enter a domain",
+    "description": "No domain error"
+  },
+  "errorInvalidDomain": {
+    "message": "Invalid domain format",
+    "description": "Invalid domain format error"
+  },
+  "errorDomainExists": {
+    "message": "Domain already exists",
+    "description": "Domain exists error"
+  },
+  "errorDomainNotFound": {
+    "message": "Domain not found",
+    "description": "Domain not found error"
+  },
+  "errorAddFailed": {
+    "message": "Add failed",
+    "description": "Add failed error"
+  },
+  "errorDeleteFailed": {
+    "message": "Delete failed",
+    "description": "Delete failed error"
+  },
+  "errorNoResponse": {
+    "message": "No response",
+    "description": "No response error"
+  },
+  "errorImportInvalidJson": {
+    "message": "Import failed: Invalid JSON file",
+    "description": "Import invalid JSON error"
+  },
+  "successAddDomain": {
+    "message": "Domain added successfully",
+    "description": "Add domain success hint"
+  },
+  "successAddCurrentDomain": {
+    "message": "Current domain added successfully",
+    "description": "Current domain add success hint"
+  },
+  "successClearDomains": {
+    "message": "All domains cleared",
+    "description": "Clear domains success hint"
+  },
+  "successImportData": {
+    "message": "Data imported successfully",
+    "description": "Import data success hint"
+  },
+  "errorImportFailed": {
+    "message": "Import failed",
+    "description": "Import failed error"
+  },
+  "errorUnknownMessageType": {
+    "message": "Unknown message type",
+    "description": "Unknown message type error"
+  },
+  "optionsTitle": {
+    "message": "Page Mute Tool - Settings",
+    "description": "Options page title"
+  },
+  "generalSettings": {
+    "message": "General Settings",
+    "description": "General settings tab"
+  },
+  "domainManagement": {
+    "message": "Domain Management",
+    "description": "Domain management tab"
+  },
+  "about": {
+    "message": "About",
+    "description": "About tab"
+  },
+  "blockAudio": {
+    "message": "Block audio autoplay",
+    "description": "Block audio option"
+  },
+  "blockVideo": {
+    "message": "Block video autoplay",
+    "description": "Block video option"
+  },
+  "blockIframe": {
+    "message": "Block media autoplay in iframes",
+    "description": "Block iframe option"
+  },
+  "saveSettings": {
+    "message": "Save Settings",
+    "description": "Save settings button"
+  },
+  "restoreDefaults": {
+    "message": "Restore Defaults",
+    "description": "Restore defaults button"
+  },
+  "domainDescription": {
+    "message": "Optional description",
+    "description": "Domain description input placeholder"
+  },
+  "addedDomains": {
+    "message": "Added Domains",
+    "description": "Added domains title"
+  },
+  "importDomains": {
+    "message": "Import Domains",
+    "description": "Import domains button"
+  },
+  "exportDomains": {
+    "message": "Export Domains",
+    "description": "Export domains button"
+  },
+  "clearDomains": {
+    "message": "Clear Domains",
+    "description": "Clear domains button"
+  },
+  "deleteBtn": {
+    "message": "Delete",
+    "description": "Delete button"
+  },
+  "version": {
+    "message": "Version: ",
+    "description": "Version label"
+  },
+  "author": {
+    "message": "Author: ",
+    "description": "Author label"
+  },
+  "descriptionLabel": {
+    "message": "Description: ",
+    "description": "Description label"
+  },
+  "license": {
+    "message": "License: ",
+    "description": "License label"
+  },
+  "support": {
+    "message": "Support: ",
+    "description": "Support label"
+  },
+  "changelog": {
+    "message": "Changelog: ",
+    "description": "Changelog label"
+  },
+  "initialVersion": {
+    "message": "Initial release",
+    "description": "Initial version description"
+  },
+  "successSaveSettings": {
+    "message": "Settings saved",
+    "description": "Save settings success hint"
+  },
+  "successRemoveDomain": {
+    "message": "Domain deleted",
+    "description": "Remove domain success hint"
+  },
+  "successExportData": {
+    "message": "Data exported",
+    "description": "Export data success hint"
+  }
+}

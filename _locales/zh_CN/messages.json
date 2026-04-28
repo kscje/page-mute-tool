@@ -1,0 +1,262 @@
+{
+  "extensionName": {
+    "message": "网页静音工具",
+    "description": "扩展名称"
+  },
+  "extensionDescription": {
+    "message": "阻止指定域名网页中的媒体自动播放，强制用户手动点击播放",
+    "description": "扩展描述"
+  },
+  "popupTitle": {
+    "message": "网页静音工具",
+    "description": "弹出界面标题"
+  },
+  "currentDomain": {
+    "message": "当前域名",
+    "description": "当前域名标签"
+  },
+  "quickAddButton": {
+    "message": "一键添加当前域名",
+    "description": "一键添加按钮"
+  },
+  "checking": {
+    "message": "检查中...",
+    "description": "检查中提示"
+  },
+  "loading": {
+    "message": "加载中...",
+    "description": "加载中提示"
+  },
+  "domainPlaceholder": {
+    "message": "输入域名 (如: example.com 或 *.example.com)",
+    "description": "域名输入框占位符"
+  },
+  "addDomain": {
+    "message": "添加",
+    "description": "添加按钮"
+  },
+  "domainListTitle": {
+    "message": "受管控域名列表",
+    "description": "域名列表标题"
+  },
+  "importBtn": {
+    "message": "导入",
+    "description": "导入按钮"
+  },
+  "exportBtn": {
+    "message": "导出",
+    "description": "导出按钮"
+  },
+  "clearAllBtn": {
+    "message": "全部删除",
+    "description": "全部删除按钮"
+  },
+  "globalToggle": {
+    "message": "总开关:",
+    "description": "全局开关标签"
+  },
+  "statsInfo": {
+    "message": "提示: 已阻止",
+    "description": "统计信息前缀"
+  },
+  "statsUnit": {
+    "message": "个自动播放",
+    "description": "统计信息单位"
+  },
+  "statusUnknown": {
+    "message": "状态未知",
+    "description": "状态：未知"
+  },
+  "statusGlobalDisabled": {
+    "message": "总开关关闭",
+    "description": "状态：总开关关闭"
+  },
+  "statusEnabled": {
+    "message": "已启用",
+    "description": "状态：已启用"
+  },
+  "statusNotEnabled": {
+    "message": "未启用",
+    "description": "状态：未启用"
+  },
+  "pageUnavailable": {
+    "message": "当前页面不可用",
+    "description": "页面不可用提示"
+  },
+  "domainUnavailable": {
+    "message": "当前页面域名不可用",
+    "description": "域名不可用提示"
+  },
+  "emptyDomains": {
+    "message": "暂无域名，请添加",
+    "description": "空域名列表提示"
+  },
+  "confirmRemoveDomain": {
+    "message": "确定要删除这个域名吗？",
+    "description": "删除域名确认"
+  },
+  "confirmClearDomains": {
+    "message": "确定要清空所有域名吗？",
+    "description": "清空域名确认"
+  },
+  "confirmRestoreDefaults": {
+    "message": "确定要恢复默认设置吗？",
+    "description": "恢复默认确认"
+  },
+  "errorNoDomain": {
+    "message": "请输入域名",
+    "description": "无域名错误"
+  },
+  "errorInvalidDomain": {
+    "message": "域名格式不正确",
+    "description": "域名格式错误"
+  },
+  "errorDomainExists": {
+    "message": "域名已存在",
+    "description": "域名重复错误"
+  },
+  "errorDomainNotFound": {
+    "message": "域名不存在",
+    "description": "域名不存在错误"
+  },
+  "errorAddFailed": {
+    "message": "添加失败",
+    "description": "添加失败错误"
+  },
+  "errorDeleteFailed": {
+    "message": "删除失败",
+    "description": "删除失败错误"
+  },
+  "errorNoResponse": {
+    "message": "无响应",
+    "description": "无响应错误"
+  },
+  "errorImportInvalidJson": {
+    "message": "导入失败: 无效的JSON文件",
+    "description": "导入JSON无效错误"
+  },
+  "successAddDomain": {
+    "message": "域名添加成功",
+    "description": "添加域名成功提示"
+  },
+  "successAddCurrentDomain": {
+    "message": "当前域名添加成功",
+    "description": "当前域名添加成功提示"
+  },
+  "successClearDomains": {
+    "message": "所有域名已清空",
+    "description": "清空域名成功提示"
+  },
+  "successImportData": {
+    "message": "数据导入成功",
+    "description": "导入数据成功提示"
+  },
+  "errorImportFailed": {
+    "message": "导入失败",
+    "description": "导入失败错误"
+  },
+  "errorUnknownMessageType": {
+    "message": "未知消息类型",
+    "description": "未知消息类型错误"
+  },
+  "optionsTitle": {
+    "message": "网页静音工具 - 设置",
+    "description": "选项页面标题"
+  },
+  "generalSettings": {
+    "message": "常规设置",
+    "description": "常规设置标签"
+  },
+  "domainManagement": {
+    "message": "域名管理",
+    "description": "域名管理标签"
+  },
+  "about": {
+    "message": "关于",
+    "description": "关于标签"
+  },
+  "blockAudio": {
+    "message": "阻止音频自动播放",
+    "description": "阻止音频选项"
+  },
+  "blockVideo": {
+    "message": "阻止视频自动播放",
+    "description": "阻止视频选项"
+  },
+  "blockIframe": {
+    "message": "阻止 iframe 中的媒体自动播放",
+    "description": "阻止iframe选项"
+  },
+  "saveSettings": {
+    "message": "保存设置",
+    "description": "保存设置按钮"
+  },
+  "restoreDefaults": {
+    "message": "恢复默认",
+    "description": "恢复默认按钮"
+  },
+  "domainDescription": {
+    "message": "可选描述",
+    "description": "域名描述输入框占位符"
+  },
+  "addedDomains": {
+    "message": "已添加域名",
+    "description": "已添加域名标题"
+  },
+  "importDomains": {
+    "message": "导入域名",
+    "description": "导入域名按钮"
+  },
+  "exportDomains": {
+    "message": "导出域名",
+    "description": "导出域名按钮"
+  },
+  "clearDomains": {
+    "message": "清空域名",
+    "description": "清空域名按钮"
+  },
+  "deleteBtn": {
+    "message": "删除",
+    "description": "删除按钮"
+  },
+  "version": {
+    "message": "版本：",
+    "description": "版本标签"
+  },
+  "author": {
+    "message": "作者：",
+    "description": "作者标签"
+  },
+  "descriptionLabel": {
+    "message": "描述：",
+    "description": "描述标签"
+  },
+  "license": {
+    "message": "许可证：",
+    "description": "许可证标签"
+  },
+  "support": {
+    "message": "支持：",
+    "description": "支持标签"
+  },
+  "changelog": {
+    "message": "更新日志：",
+    "description": "更新日志标签"
+  },
+  "initialVersion": {
+    "message": "初始版本",
+    "description": "初始版本描述"
+  },
+  "successSaveSettings": {
+    "message": "设置已保存",
+    "description": "保存设置成功提示"
+  },
+  "successRemoveDomain": {
+    "message": "域名已删除",
+    "description": "删除域名成功提示"
+  },
+  "successExportData": {
+    "message": "数据已导出",
+    "description": "导出数据成功提示"
+  }
+}
