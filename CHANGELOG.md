@@ -2,6 +2,10 @@
 
 All notable changes to Page Mute Tool are documented here.
 
+## v1.0.1 - 2026-05-08
+
+- Fixed the Chrome Extensions management page icon by adding top-level extension icons to the manifest.
+
 ## v1.0.0 - 2026-04-28
 
 - Added domain-based media autoplay blocking for audio, video, and iframe media.
