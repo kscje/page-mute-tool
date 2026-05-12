@@ -1,145 +1,156 @@
 # Page Mute Tool
 
-Chrome浏览器插件，用于阻止指定域名网页中的媒体自动播放，强制用户手动点击播放。
+A Chrome browser extension that blocks media autoplay on specified domains, forcing manual play.
 
-## 功能特点
+## Features
 
-- **域名管理**：支持添加、删除、启用/禁用需要控制的域名
-- **媒体控制**：阻止音频和视频的自动播放
-- **用户交互**：用户手动点击后恢复正常播放
-- **实时状态**：显示当前页面的控制状态
-- **统计信息**：记录阻止的自动播放次数
-- **数据导入/导出**：支持配置备份和恢复
-- **高级选项**：支持Web Audio API控制、流媒体处理等
+- **Domain Management** — Add, remove, enable/disable, import/export target domain rules
+- **Media Autoplay Blocking** — Block audio, video, and iframe-based media autoplay independently
+- **Wildcard Domain Support** — Use `*.example.com` to cover all subdomains
+- **Real-Time Status** — Toolbar icon switches between active/inactive states per tab
+- **Quick Add** — Add the current domain to the managed list with one click from the popup
+- **Statistics** — Track blocked autoplay counts (total and per-session)
+- **Data Import/Export** — Back up and restore domain rules and settings as JSON
+- **i18n** — Built-in Simplified Chinese and English, auto-detected from browser language
 
-## 安装方法
+## Installation
 
-### 方法一：从Chrome Web Store安装
-（未来上线后）
+### From Chrome Web Store
 
-### 方法二：本地开发模式安装
+*(Coming soon)*
 
-1. 克隆或下载本项目到本地
-2. 打开Chrome浏览器，进入 `chrome://extensions/`
-3. 开启右上角的「开发者模式」
-4. 点击「加载已解压的扩展程序」
-5. 选择项目根目录
-6. 插件安装完成，可在工具栏看到图标
+### Local Development Mode
 
-## 使用指南
+1. Clone or download this repository
+2. Open Chrome and navigate to `chrome://extensions/`
+3. Enable **Developer mode** (toggle in the top-right corner)
+4. Click **Load unpacked**
+5. Select the repository root directory
+6. The extension icon will appear in the toolbar
 
-### 基本使用
+## Usage
 
-1. 点击工具栏中的插件图标
-2. 在弹出界面中，在「输入域名」框中输入需要控制的域名
-3. 点击「添加」按钮
-4. 访问该域名时，插件会自动阻止媒体自动播放
-5. 点击媒体播放器的播放按钮即可正常播放
+### Popup (Toolbar Icon)
 
-### 域名格式
+1. Click the extension icon in the Chrome toolbar
+2. View the **current domain** status — active or inactive
+3. Click **Add Current Domain** to quickly add it to the managed list
+4. Manually type a domain pattern and click **Add**
+5. Manage the domain list: toggle on/off, delete entries
+6. Use **Import / Export** to back up or restore your domain rules
+7. Click the **⚙️** icon to open the settings page
 
-- 精确域名：`example.com`
-- 通配符域名：`*.example.com`（匹配所有子域名）
-- 本地域名：`localhost`
+### Domain Patterns
 
-### 高级设置
+| Pattern | Matches |
+|---------|---------|
+| `example.com` | `example.com` only |
+| `*.example.com` | All subdomains such as `www.example.com`, `cdn.example.com` |
+| `localhost` | Local development with optional port |
 
-1. 点击插件图标，然后点击右上角的「⚙️」按钮进入设置页面
-2. **常规设置**：控制开机启动、显示状态等
-3. **域名管理**：批量管理域名列表
-4. **高级选项**：调整性能设置、高级控制选项
-5. **关于**：查看插件版本和更新日志
+### Settings Page (Options)
 
-## 技术实现
+Right-click the toolbar icon → **Options**, or click **⚙️** in the popup.
 
-- **Manifest V3**：使用Chrome扩展最新规范
-- **Service Worker**：轻量级后台服务
-- **Content Script**：注入目标页面执行媒体控制
-- **MutationObserver**：监听DOM变化，实时检测媒体元素
-- **chrome.storage**：持久化存储域名列表和设置
-- **原生HTML/CSS/JS**：无外部依赖，启动快速
+**General Settings tab:**
+- Block audio autoplay
+- Block video autoplay
+- Block media autoplay in iframes
+- **Save Settings** — persist current checkbox selections
+- **Restore Defaults** — reset all settings to their original values
 
-## 支持的浏览器
+**Domain Management tab:**
+- Add domain patterns with optional descriptions
+- Toggle individual domains on/off
+- Delete domains
+- Import / Export domain rules as JSON
+- Clear all domains at once
 
-- Chrome 88+（最低要求）
-- Edge 88+（基于Chromium）
+**About tab:**
+- Version, author, license, and changelog information
 
-## 权限说明
+## Permissions
 
-- `storage`：存储域名列表和设置
-- `activeTab`：仅在当前活动标签页执行脚本
-- `scripting`：动态注入脚本
-- `<all_urls>`：访问所有网站（用于媒体控制）
+| Permission | Purpose |
+|------------|---------|
+| `storage` | Store domain rules, settings, and statistics locally |
+| `activeTab` | Access the current tab for URL detection and icon updates |
+| `<all_urls>` | Inject content scripts on all sites to block media autoplay |
 
-## 隐私政策
+No data is ever collected or transmitted. All data stays in your browser.
 
-- 本插件不收集、不上传任何用户浏览数据
-- 所有数据存储在本地浏览器中
-- 代码开源，可供审计
-- 完整隐私政策：[中文](docs/privacy-policy-zh.md) / [English](docs/privacy-policy-en.md)
+## Privacy Policy
 
-## 开发说明
+This extension does **not** collect, store, or transmit any personal browsing data. All configuration and statistics are stored locally in Chrome's built-in storage. The source code is open and available for audit.
 
-### 项目结构
+- [中文隐私政策](docs/privacy-policy-zh.md)
+- [Privacy Policy (English)](docs/privacy-policy-en.md)
+
+## Project Structure
 
 ```
 page-mute-tool/
-├── manifest.json           # 扩展配置文件
-├── background.js          # 后台服务脚本
-├── content.js             # 内容脚本（注入到页面）
-├── media-controller.js    # 媒体控制核心逻辑
-├── storage.js             # 存储管理模块
-├── utils.js               # 工具函数模块
-├── popup.html             # 弹出界面 HTML
-├── popup.js               # 弹出界面逻辑
-├── popup.css              # 弹出界面样式
-├── options.html           # 选项页面 HTML
-├── options.js             # 选项页面逻辑
-├── options.css            # 选项页面样式
-├── icons/                 # 图标资源目录
-│   ├── icon-active.svg    # 激活状态图标
-│   └── icon-inactive.svg  # 未激活状态图标
-├── README.md              # 项目说明
-└── LICENSE                # 许可证
+├── manifest.json             # Extension manifest (Manifest V3)
+├── _locales/                 # Chrome i18n message catalogs
+│   ├── en/messages.json
+│   └── zh_CN/messages.json
+├── background.js             # Service worker — message routing, icon state
+├── content-bridge.js         # Content script proxy (ISOLATED world)
+├── page-hook.js              # Main-world script — DOM mutation observation
+├── media-controller.js       # Media autoplay interception (MAIN world)
+├── content.js                # Orchestrates bridging and messaging
+├── popup.html / popup.js / popup.css     # Toolbar popup UI
+├── options.html / options.js / options.css # Settings page UI
+├── storage.js                # chrome.storage persistence layer
+├── utils.js                  # Shared utility functions
+├── i18n.js                   # Internationalization helper
+├── icons/                    # Extension and state icons (PNG)
+├── store-assets/             # Chrome Web Store listing assets (not packaged)
+├── docs/                     # Privacy policy documents
+├── dist/                     # Release packages (ZIP)
+├── README.md                 # This file
+├── CHANGELOG.md              # Release changelog
+└── LICENSE                   # MIT License
 ```
 
-### 构建和测试
+## Technical Architecture
 
-1. 本地安装（见安装方法）
-2. 测试不同域名的媒体控制效果
-3. 检查控制台日志查看插件运行状态
+- **Manifest V3** — Latest Chrome extension platform
+- **Service Worker** — Lightweight background process for message routing
+- **Content Scripts** — Two-world approach:
+  - `MAIN` world: `media-controller.js` + `page-hook.js` for direct DOM/media interception
+  - `ISOLATED` world: `content-bridge.js` for chrome.runtime communication
+- **MutationObserver** — Dynamically detect and handle media elements added after page load
+- **chrome.storage.sync** — Persistent domain rules and settings
+- **chrome.i18n** — Built-in Chrome internationalization API
+- **No external dependencies** — Pure vanilla JavaScript, HTML, and CSS
 
-## 常见问题
+## Browser Support
 
-### Q: 插件不生效怎么办？
-A: 请检查：
-1. 域名格式是否正确
-2. 域名是否已启用
-3. 全局开关是否开启
-4. 刷新页面后重试
+- Chrome 88+ (minimum required)
+- Edge 88+ (Chromium-based)
 
-### Q: 某些网站的媒体无法阻止怎么办？
-A: 可能是以下原因：
-1. 网站使用了特殊的媒体播放器
-2. 媒体通过iframe加载
-3. 网站使用了Web Audio API
-4. 尝试在高级设置中启用相关选项
+## Build & Package
 
-### Q: 插件会影响页面性能吗？
-A: 插件采用了性能优化措施：
-- 仅在匹配的域名上运行
-- 使用MutationObserver节流
-- 避免重复处理元素
-- 轻量级设计，不影响页面加载速度
+This project has no build step. To create a Chrome Web Store package:
 
-## 贡献
+```bash
+zip -r dist/page-mute-tool-vX.Y.Z-cws.zip \
+  manifest.json \
+  background.js \
+  content.js content-bridge.js media-controller.js page-hook.js \
+  popup.html popup.js popup.css \
+  options.html options.js options.css \
+  storage.js utils.js i18n.js \
+  LICENSE \
+  _locales/ \
+  icons/icon*.png
+```
 
-欢迎提交Issue和Pull Request，帮助改进插件功能。
+## Contributing
 
-## 许可证
+Issues and pull requests are welcome. Please see [AGENTS.md](AGENTS.md) for repository conventions.
 
-MIT License
+## License
 
-## 版本历史
-
-- v1.0.0 - 初始版本，实现核心功能
+MIT License — see [LICENSE](LICENSE) for details.

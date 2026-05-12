@@ -199,6 +199,9 @@ I18n.prototype.fallbackMessages = {
     changelog: { message: '更新日志：' },
     initialVersion: { message: '初始版本' },
     successSaveSettings: { message: '设置已保存' },
+    successRestoreDefaults: { message: '已恢复默认设置' },
+    errorSaveFailed: { message: '保存失败，请重试' },
+    errorRestoreDefaultsFailed: { message: '恢复默认失败，请重试' },
     successRemoveDomain: { message: '域名已删除' },
     successExportData: { message: '数据已导出' }
   },
@@ -266,6 +269,9 @@ I18n.prototype.fallbackMessages = {
     changelog: { message: 'Changelog: ' },
     initialVersion: { message: 'Initial release' },
     successSaveSettings: { message: 'Settings saved' },
+    successRestoreDefaults: { message: 'Default settings restored' },
+    errorSaveFailed: { message: 'Save failed, please retry' },
+    errorRestoreDefaultsFailed: { message: 'Restore defaults failed, please retry' },
     successRemoveDomain: { message: 'Domain deleted' },
     successExportData: { message: 'Data exported' }
   }

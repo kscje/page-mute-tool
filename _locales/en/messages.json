@@ -251,6 +251,18 @@
     "message": "Settings saved",
     "description": "Save settings success hint"
   },
+  "successRestoreDefaults": {
+    "message": "Default settings restored",
+    "description": "Restore defaults success hint"
+  },
+  "errorSaveFailed": {
+    "message": "Save failed, please retry",
+    "description": "Save failed error hint"
+  },
+  "errorRestoreDefaultsFailed": {
+    "message": "Restore defaults failed, please retry",
+    "description": "Restore defaults failed error hint"
+  },
   "successRemoveDomain": {
     "message": "Domain deleted",
     "description": "Remove domain success hint"

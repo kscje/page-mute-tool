@@ -251,6 +251,18 @@
     "message": "设置已保存",
     "description": "保存设置成功提示"
   },
+  "successRestoreDefaults": {
+    "message": "已恢复默认设置",
+    "description": "恢复默认成功提示"
+  },
+  "errorSaveFailed": {
+    "message": "保存失败，请重试",
+    "description": "保存失败错误提示"
+  },
+  "errorRestoreDefaultsFailed": {
+    "message": "恢复默认失败，请重试",
+    "description": "恢复默认失败错误提示"
+  },
   "successRemoveDomain": {
     "message": "域名已删除",
     "description": "删除域名成功提示"

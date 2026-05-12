@@ -49,7 +49,7 @@ Page Mute Tool 可以帮助你阻止指定网站中的媒体自动播放。你�
 ## 素材
 
 上传包：
-`dist/page-mute-tool-v1.0.0-cws.zip`
+`dist/page-mute-tool-v1.0.2-cws.zip`
 
 小型宣传图：
 `store-assets/small-promo-440x280.png`

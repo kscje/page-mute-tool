@@ -49,7 +49,7 @@ Active tab permission justification:
 ## Assets
 
 Upload package:
-`dist/page-mute-tool-v1.0.0-cws.zip`
+`dist/page-mute-tool-v1.0.2-cws.zip`
 
 Small promotional tile:
 `store-assets/small-promo-440x280.png`

@@ -55,17 +55,25 @@ class OptionsManager {
     };
   }
 
-  async saveSettings() {
-    this.settings = {
-      ...this.settings,
-      ...this.collectSettings()
-    };
+  async saveSettings(newSettings = null, silent = false) {
+    if (newSettings) {
+      this.settings = { ...newSettings };
+    } else {
+      this.settings = {
+        ...this.settings,
+        ...this.collectSettings()
+      };
+    }
 
     const response = await this.sendMessage('SET_SETTINGS', { settings: this.settings });
     if (response.success) {
       this.settings = response.settings;
       this.updateFormFields();
-      this.showMessage(i18n.getMessage('successSaveSettings'));
+      if (!silent) {
+        this.showMessage(i18n.getMessage('successSaveSettings'));
+      }
+    } else {
+      this.showMessage(i18n.getMessage('errorSaveFailed') || '保存失败，请重试');
     }
   }
 
@@ -74,7 +82,12 @@ class OptionsManager {
       return;
     }
 
-    await this.saveSettings({ ...PAGE_MUTE_DEFAULT_SETTINGS });
+    try {
+      await this.saveSettings({ ...PAGE_MUTE_DEFAULT_SETTINGS }, true);
+      this.showMessage(i18n.getMessage('successRestoreDefaults'));
+    } catch (error) {
+      this.showMessage(i18n.getMessage('errorRestoreDefaultsFailed') || '恢复默认失败，请重试');
+    }
   }
 
   async loadDomains() {
