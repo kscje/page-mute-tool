@@ -3,13 +3,13 @@
 ## Basic Information
 
 Name:
-Page Mute Tool
+Autoplay Blocker
 
 Short description:
 Block media autoplay by domain and keep audio and video playback under your control.
 
 Detailed description:
-Page Mute Tool helps you block unwanted media autoplay on websites you choose. You can quickly add the current domain from the toolbar popup, or manage all domain rules from the settings page. The extension keeps audio and video quiet before you interact with the page, reducing interruptions caused by automatic playback.
+Autoplay Blocker helps you block unwanted media autoplay on websites you choose. You can quickly add the current domain from the toolbar popup, or manage all domain rules from the settings page. The extension keeps audio and video quiet before you interact with the page, reducing interruptions caused by automatic playback.
 
 Key features:
 - Add the current website domain from the toolbar popup.
@@ -49,7 +49,7 @@ Active tab permission justification:
 ## Assets
 
 Upload package:
-`dist/page-mute-tool-v1.0.2-cws.zip`
+`dist/autoplay-blocker-v1.0.3-cws.zip`
 
 Small promotional tile:
 `store-assets/small-promo-440x280.png`

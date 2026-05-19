@@ -1,4 +1,4 @@
-# Page Mute Tool
+# Autoplay Blocker
 
 A Chrome browser extension that blocks media autoplay on specified domains, forcing manual play.
 

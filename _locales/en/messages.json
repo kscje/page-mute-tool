@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Page Mute Tool",
+    "message": "Autoplay Blocker",
     "description": "Extension name"
   },
   "extensionDescription": {
@@ -8,7 +8,7 @@
     "description": "Extension description"
   },
   "popupTitle": {
-    "message": "Page Mute Tool",
+    "message": "Autoplay Blocker",
     "description": "Popup title"
   },
   "currentDomain": {
@@ -160,7 +160,7 @@
     "description": "Unknown message type error"
   },
   "optionsTitle": {
-    "message": "Page Mute Tool - Settings",
+    "message": "Autoplay Blocker - Settings",
     "description": "Options page title"
   },
   "generalSettings": {
@@ -238,6 +238,14 @@
   "support": {
     "message": "Support: ",
     "description": "Support label"
+  },
+  "feedbackTitle": {
+    "message": "Feedback: ",
+    "description": "Feedback module title"
+  },
+  "feedbackDescription": {
+    "message": "If you have any suggestions or feedback, contact the author: ",
+    "description": "Feedback module copy"
   },
   "changelog": {
     "message": "Changelog: ",

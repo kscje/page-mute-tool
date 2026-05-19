@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "网页静音工具",
+    "message": "网站自动播放拦截器",
     "description": "扩展名称"
   },
   "extensionDescription": {
@@ -8,7 +8,7 @@
     "description": "扩展描述"
   },
   "popupTitle": {
-    "message": "网页静音工具",
+    "message": "网站自动播放拦截器",
     "description": "弹出界面标题"
   },
   "currentDomain": {
@@ -160,7 +160,7 @@
     "description": "未知消息类型错误"
   },
   "optionsTitle": {
-    "message": "网页静音工具 - 设置",
+    "message": "网站自动播放拦截器 - 设置",
     "description": "选项页面标题"
   },
   "generalSettings": {
@@ -238,6 +238,14 @@
   "support": {
     "message": "支持：",
     "description": "支持标签"
+  },
+  "feedbackTitle": {
+    "message": "提交建议说明：",
+    "description": "建议反馈模块标题"
+  },
+  "feedbackDescription": {
+    "message": "如有任何建议反馈，可联系作者：",
+    "description": "建议反馈说明文案"
   },
   "changelog": {
     "message": "更新日志：",

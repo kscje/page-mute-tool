@@ -1,6 +1,13 @@
 # Changelog
 
-All notable changes to Page Mute Tool are documented here.
+All notable changes to Autoplay Blocker are documented here.
+
+## v1.0.3 - 2026-05-19
+
+### Changed
+- Renamed the English extension name to `Autoplay Blocker`.
+- Renamed the Simplified Chinese extension name to `网站自动播放拦截器`.
+- Updated localized manifest messages, popup/settings titles, store listing drafts, privacy policy drafts, and release package references for the Chrome Web Store submission.
 
 ## v1.0.2 - 2026-05-12
 

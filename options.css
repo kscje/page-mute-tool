@@ -327,6 +327,21 @@ body {
   font-size: 14px;
 }
 
+.feedback-item p {
+  margin-top: 6px;
+  color: #666;
+  word-break: break-word;
+}
+
+.feedback-item a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.feedback-item a:hover {
+  text-decoration: underline;
+}
+
 .about-item strong {
   color: #333;
 }

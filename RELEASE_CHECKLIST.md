@@ -6,7 +6,7 @@ Use this checklist before publishing a new Chrome Web Store version.
 
 - [ ] Update `manifest.json` version.
 - [ ] Update `CHANGELOG.md`.
-- [ ] Confirm release package name, for example `dist/page-mute-tool-v1.0.1-cws.zip`.
+- [ ] Confirm release package name, for example `dist/autoplay-blocker-v1.0.3-cws.zip`.
 
 ## Code Validation
 

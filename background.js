@@ -51,7 +51,7 @@ async function initBackground() {
   await ensureInitialized();
   await storageManager.resetSessionStats();
   await refreshAllActionIcons();
-  console.log('Page Mute Tool initialized');
+  console.log('Autoplay Blocker initialized');
 }
 
 chrome.runtime.onInstalled.addListener(() => {

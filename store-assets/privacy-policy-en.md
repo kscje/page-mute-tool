@@ -1,8 +1,8 @@
-# Privacy Policy for Page Mute Tool
+# Privacy Policy for Autoplay Blocker
 
 Last updated: 2026-04-27
 
-Page Mute Tool is a Chrome extension that blocks media autoplay on domains selected by the user.
+Autoplay Blocker is a Chrome extension that blocks media autoplay on domains selected by the user.
 
 ## Information the Extension Uses
 
@@ -20,7 +20,7 @@ This information is used only to provide the extension's single purpose: blockin
 
 ## Data Sharing
 
-Page Mute Tool does not sell, transmit, or share user data with third parties.
+Autoplay Blocker does not sell, transmit, or share user data with third parties.
 
 The extension does not use analytics, advertising, tracking, or remote servers.
 
@@ -30,7 +30,7 @@ Domain rules and settings are stored with Chrome storage APIs. Block statistics 
 
 ## Remote Code
 
-Page Mute Tool does not load or execute remotely hosted code.
+Autoplay Blocker does not load or execute remotely hosted code.
 
 ## Contact
 
