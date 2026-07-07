@@ -2,6 +2,12 @@
 
 All notable changes to Autoplay Blocker are documented here.
 
+## v1.0.4 - 2026-07-07
+
+### Fixed
+- Fixed X.com videos being released by unrelated page clicks after autoplay was blocked.
+- Return a `NotAllowedError` when autoplay `play()` calls are blocked, matching browser autoplay blocking semantics.
+
 ## v1.0.3 - 2026-05-19
 
 ### Changed

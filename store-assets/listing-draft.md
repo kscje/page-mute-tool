@@ -49,7 +49,7 @@ Active tab permission justification:
 ## Assets
 
 Upload package:
-`dist/autoplay-blocker-v1.0.3-cws.zip`
+`dist/autoplay-blocker-v1.0.4-cws.zip`
 
 Small promotional tile:
 `store-assets/small-promo-440x280.png`

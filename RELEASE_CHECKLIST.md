@@ -6,7 +6,7 @@ Use this checklist before publishing a new Chrome Web Store version.
 
 - [ ] Update `manifest.json` version.
 - [ ] Update `CHANGELOG.md`.
-- [ ] Confirm release package name, for example `dist/autoplay-blocker-v1.0.3-cws.zip`.
+- [ ] Confirm release package name, for example `dist/autoplay-blocker-v1.0.4-cws.zip`.
 
 ## Code Validation
 

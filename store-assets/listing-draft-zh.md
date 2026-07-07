@@ -49,7 +49,7 @@
 ## 素材
 
 上传包：
-`dist/autoplay-blocker-v1.0.3-cws.zip`
+`dist/autoplay-blocker-v1.0.4-cws.zip`
 
 小型宣传图：
 `store-assets/small-promo-440x280.png`

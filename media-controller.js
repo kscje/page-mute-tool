@@ -47,7 +47,14 @@ class MediaController {
   }
 
   createBlockedPlayResult() {
-    return Promise.resolve();
+    let error;
+    if (typeof DOMException === 'function') {
+      error = new DOMException('Autoplay blocked by Page Mute Tool', 'NotAllowedError');
+    } else {
+      error = new Error('Autoplay blocked by Page Mute Tool');
+      error.name = 'NotAllowedError';
+    }
+    return Promise.reject(error);
   }
 
   sendRuntimeMessage(message) {
@@ -76,19 +83,24 @@ class MediaController {
   setupEventListeners() {
     const userEvents = ['pointerdown', 'click', 'touchstart', 'keydown'];
     userEvents.forEach((eventType) => {
-      const useCapture = eventType === 'pointerdown' || eventType === 'keydown';
+      const listener = (event) => this.handleUserInteraction(event);
       document.addEventListener(
         eventType,
-        (event) => this.handleUserInteraction(event),
-        useCapture ? { capture: true, passive: true } : { once: true, passive: true }
+        listener,
+        { capture: true, passive: true }
       );
+      this.cleanupTasks.push(() => {
+        document.removeEventListener(eventType, listener, { capture: true });
+      });
     });
   }
 
   handleUserInteraction(event) {
-    if (event && event.isTrusted) {
-      this.lastTrustedInteractionAt = Date.now();
+    if (!event || !event.isTrusted || !this.isExplicitMediaInteraction(event)) {
+      return;
     }
+
+    this.lastTrustedInteractionAt = Date.now();
 
     if (this.hasUserInteracted) {
       return;
@@ -100,6 +112,67 @@ class MediaController {
       type: 'USER_INTERACTED',
       timestamp: Date.now()
     });
+  }
+
+  isExplicitMediaInteraction(event) {
+    const path = typeof event.composedPath === 'function' ? event.composedPath() : [];
+    if (path.some((node) => this.isManagedMediaElement(node))) {
+      return true;
+    }
+
+    if (event.type === 'keydown') {
+      return false;
+    }
+
+    const point = this.getEventPoint(event);
+    if (!point) {
+      return false;
+    }
+
+    return Array.from(this.managedElements).some((mediaElement) =>
+      this.isPointInsideMediaElement(point, mediaElement)
+    );
+  }
+
+  isManagedMediaElement(node) {
+    return node instanceof HTMLMediaElement
+      && this.managedElements.has(node)
+      && this.shouldManageElement(node);
+  }
+
+  getEventPoint(event) {
+    if (typeof event.clientX === 'number' && typeof event.clientY === 'number') {
+      return {
+        x: event.clientX,
+        y: event.clientY
+      };
+    }
+
+    const touch = event.changedTouches?.[0] || event.touches?.[0];
+    if (!touch) {
+      return null;
+    }
+
+    return {
+      x: touch.clientX,
+      y: touch.clientY
+    };
+  }
+
+  isPointInsideMediaElement(point, mediaElement) {
+    if (!this.shouldManageElement(mediaElement) || !mediaElement.isConnected) {
+      return false;
+    }
+
+    const rect = mediaElement.getBoundingClientRect();
+    if (rect.width <= 0 || rect.height <= 0) {
+      return false;
+    }
+
+    return point.x >= rect.left
+      && point.x <= rect.right
+      && point.y >= rect.top
+      && point.y <= rect.bottom;
   }
 
   scanExistingMedia() {
@@ -328,10 +401,6 @@ class MediaController {
 
   isPlaybackAllowedByUserGesture() {
     if (this.hasUserInteracted) {
-      return true;
-    }
-
-    if (document.userActivation && document.userActivation.isActive) {
       return true;
     }
 
