@@ -21,3 +21,6 @@ icons/*preview*.png
 
 # Release packages
 dist/
+
+# E2E test evidence (screenshots, storage snapshots)
+gui-test-screenshots/
