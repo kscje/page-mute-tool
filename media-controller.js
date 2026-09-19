@@ -96,11 +96,21 @@ class MediaController {
   }
 
   handleUserInteraction(event) {
-    if (!event || !event.isTrusted || !this.isExplicitMediaInteraction(event)) {
+    if (!event || !event.isTrusted) {
       return;
     }
 
+    // Track every trusted gesture with a short-lived timestamp so play() calls
+    // issued within the same interaction are honored, even when the gesture
+    // never lands on the media element itself (e.g. YouTube calls play() a few
+    // milliseconds after the play button is clicked, and its updated player
+    // positions the <video> element outside the visible player area, so the
+    // geometric hit test below cannot match it).
     this.lastTrustedInteractionAt = Date.now();
+
+    if (!this.isExplicitMediaInteraction(event)) {
+      return;
+    }
 
     if (this.hasUserInteracted) {
       return;
@@ -274,7 +284,7 @@ class MediaController {
 
     const onPlay = () => {
       this.enforcePreInteractionSilence(mediaElement);
-      if (!this.hasUserInteracted && this.shouldManageElement(mediaElement)) {
+      if (!this.isPlaybackAllowedByUserGesture() && this.shouldManageElement(mediaElement)) {
         mediaElement.pause();
       }
     };
@@ -335,7 +345,9 @@ class MediaController {
   }
 
   enforcePreInteractionSilence(mediaElement) {
-    if (this.isPlaybackAllowedByUserGesture() || !this.shouldManageElement(mediaElement)) {
+    if (!mediaElement.paused
+        || this.isPlaybackAllowedByUserGesture()
+        || !this.shouldManageElement(mediaElement)) {
       return;
     }
 
@@ -345,7 +357,9 @@ class MediaController {
   }
 
   handlePlayAttempt(mediaElement, originalPlay, args) {
-    if (!this.shouldManageElement(mediaElement) || this.isPlaybackAllowedByUserGesture()) {
+    if (!this.shouldManageElement(mediaElement)
+        || this.isPlaybackAllowedByUserGesture()
+        || !mediaElement.paused) {
       this.releasePreInteractionSilence(mediaElement);
       mediaElement.removeAttribute('muted');
       return originalPlay(...args);

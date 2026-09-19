@@ -2,6 +2,14 @@
 
 All notable changes to Autoplay Blocker are documented here.
 
+## v1.0.5 - 2026-09-19
+
+### Fixed
+- Fixed manual playback being blocked on YouTube's updated watch page player, where the `<video>` element is positioned outside the visible player area so play-button clicks never matched the media-element hit test.
+- Trusted user gestures anywhere on the page now open a short (1.5s) playback grace window, so `play()` calls issued within the same interaction are honored. The window is non-sticky: unrelated page clicks still do not permanently release blocked media (v1.0.4 behavior preserved).
+- Redundant `play()` calls on media that is already playing no longer pause active playback.
+- Playback started with a user gesture is no longer re-muted by later media events (e.g. `volumechange`, `canplay`).
+
 ## v1.0.4 - 2026-07-07
 
 ### Fixed
